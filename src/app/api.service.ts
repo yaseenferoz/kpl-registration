@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:3000'; // Replace with your API endpoint
+  private apiUrl = 'https://cric-be.onrender.com'; // Replace with your API endpoint
 
   constructor(private http: HttpClient) {}
 
