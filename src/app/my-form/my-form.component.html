@@ -1,11 +1,19 @@
-<div class="ui middle aligned center aligned grid">
+<div class="container">
+  <div class="ui middle aligned center aligned grid">
     <div class="column">
       <h2 class="ui teal image header">
         <div class="content">
-          Submit Form
+          Kpl Registration Form
         </div>
       </h2>
+      <div class="field">
+        <img src="https://cricbe.s3.ap-south-1.amazonaws.com/WhatsApp+Image+2024-03-27+at+22.42.40_85ec6d4e.jpg" alt="Poster 1 Preview" >
+      </div>
+      <div class="field">
+        <img src="https://cricbe.s3.ap-south-1.amazonaws.com/WhatsApp+Image+2024-03-27+at+22.42.39_ac1f4421.jpg" alt="Poster 2 Preview">
+      </div>
       <form class="ui large form" (ngSubmit)="submitForm()" #form="ngForm">
+
         <div class="ui stacked segment">
           <div class="field">
             <div class="ui left icon input">
@@ -54,8 +62,10 @@
           </div>
           
           <button class="ui fluid large teal submit button" type="submit">Submit</button>
+          <div *ngIf="errorMsg" class="ui red message">{{errorMsg}}</div>
         </div>
       </form>
     </div>
   </div>
-  
+
+

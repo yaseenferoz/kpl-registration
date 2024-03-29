@@ -40,6 +40,7 @@ export class MyFormComponent {
     reader.readAsDataURL(file);
   }
   }
+  errorMsg=''
 
   submitForm() {
     const formData = new FormData();
@@ -67,6 +68,7 @@ export class MyFormComponent {
       error => {
         console.error('Error submitting form:', error);
         // Handle error response
+        this.errorMsg=error?.error?.error
        
       }
     );
@@ -82,5 +84,6 @@ export class MyFormComponent {
       playerType: ''
     };
     this.imagePreview = ''; // Reset image preview
+    this.errorMsg=''
   }
 }
