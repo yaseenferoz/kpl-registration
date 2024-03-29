@@ -20,9 +20,9 @@
               <i class="user icon"></i>
               <input type="text" name="name" [(ngModel)]="formData.name" placeholder="Full Name" required>
             </div>
-              <div *ngIf="(form.controls['name'].touched)" class="ui red message">
-              <div *ngIf="form.controls['name'].errors?.['required']">Please Enter your Name.</div>
-          </div>
+            <div *ngIf="form.controls['name'].invalid && form.controls['name'].touched" class="ui red message">
+              <div *ngIf="form.controls['name'].errors?.['required']">Please enter your Name.</div>
+            </div>
           </div>
           <div class="field">
             <div class="ui left icon input">
@@ -31,7 +31,7 @@
             </div>
             <div *ngIf="form.controls['phone'].invalid && (form.controls['phone'].dirty || form.controls['phone'].touched)" class="ui red message">
               <div *ngIf="form.controls['phone'].errors?.['required']">Contact number is required.</div>
-              <div *ngIf="form.controls['phone'].errors?.['pattern']">Please enter a valid contact number<br> with maximum 10 digits.</div>
+              <div *ngIf="form.controls['phone'].errors?.['pattern']">Please enter a valid 10 digits. <br>contact number </div>
           </div>
           
           </div>
@@ -40,9 +40,9 @@
               <i class="location arrow icon"></i>
               <input type="text" name="villageName" [(ngModel)]="formData.villageName" placeholder="Village" required>
             </div>
-            <div *ngIf="(form.controls['villageName'].touched)" class="ui red message">
-              <div *ngIf="form.controls['villageName'].errors?.['required']">Please Enter your Village Name.</div>
-              </div>
+            <div *ngIf="form.controls['villageName'].invalid && form.controls['villageName'].touched" class="ui red message">
+              <div *ngIf="form.controls['villageName'].errors?.['required']">Please enter your Village Name.</div>
+            </div>
           </div>
           <div class="field">
             <select class="ui dropdown" name="playerType" [(ngModel)]="formData.playerType" required>
@@ -51,9 +51,9 @@
               <option value="Bowler">Bowler</option>
               <option value="All-Rounder">All-Rounder</option>
             </select>
-            <div *ngIf="(form.controls['playerType'].touched)" class="ui red message">
-              <div *ngIf="form.controls['playerType'].errors?.['required']">Please Select Player Type.</div>
-              </div>
+            <div *ngIf="form.controls['playerType'].invalid && form.controls['playerType'].touched" class="ui red message">
+              <div *ngIf="form.controls['playerType'].errors?.['required']">Please select Player Type.</div>
+            </div>
           </div>
           <div class="field">
             <input type="file" name="photo" (change)="handleFileInput($event)" accept="image/*" required>
