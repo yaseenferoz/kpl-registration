@@ -8,4 +8,7 @@
     align-items: center;
     height: auto;
   }
-  
+  .image-poster {
+    max-width: 350px; /* Adjust the width as needed */
+    max-height: 350px; /* Adjust the height as needed */
+  }
