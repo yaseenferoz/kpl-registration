@@ -61,9 +61,9 @@
           <div class="field" *ngIf="formData.photo">
             <img [src]="imagePreview" alt="Preview" class="preview-image">
           </div>
-          
-          <button class="ui fluid large teal submit button" type="submit" [disabled]="form.invalid || !formData.photo">Submit</button>
           <div *ngIf="errorMsg" class="ui red message">{{errorMsg}}</div>
+          <button class="ui fluid large teal submit button" type="submit" [disabled]="form.invalid || !formData.photo">Submit</button>
+          
         </div>
       </form>
       <div class="ui success message" *ngIf="submitted">
