@@ -41,7 +41,7 @@ export class MyFormComponent {
   }
   }
   errorMsg=''
-
+  submitted: boolean = false;
   submitForm() {
     const formData = new FormData();
 
@@ -61,7 +61,7 @@ export class MyFormComponent {
       response => {
         console.log('Form submitted successfully:', response);
         // Handle success response
-        
+        this.submitted = true;
         // Reset the form
         this.resetForm();
       },

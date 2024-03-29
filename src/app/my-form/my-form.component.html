@@ -12,7 +12,7 @@
       <div>
         <img src="https://cricbe.s3.ap-south-1.amazonaws.com/WhatsApp+Image+2024-03-27+at+22.42.39_ac1f4421.jpg" alt="Poster 2 Preview"  class="image-poster">
       </div>
-      <form class="ui large form" (ngSubmit)="submitForm()" #form="ngForm">
+      <form *ngIf="!submitted" class="ui large form" (ngSubmit)="submitForm()" #form="ngForm">
 
         <div class="ui stacked segment">
           <div class="field">
@@ -65,6 +65,10 @@
           <div *ngIf="errorMsg" class="ui red message">{{errorMsg}}</div>
         </div>
       </form>
+      <div class="ui success message" *ngIf="submitted">
+        <div class="header">Thank you for registering with KPL </div>
+        <!-- You can add additional content here if needed -->
+      </div>
     </div>
   </div>
 
