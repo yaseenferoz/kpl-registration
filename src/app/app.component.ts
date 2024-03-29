@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'cric-ng';
+  title = 'KPL Season - 03, 2024 Registration Form';
 }

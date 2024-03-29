@@ -3,8 +3,6 @@ import { ApiService } from '../api.service';
 
 interface FormData {
   name: string;
-  age: number |null;
-  email: string;
   phone: string;
   villageName: string;
   playerType: string;
@@ -18,8 +16,6 @@ interface FormData {
 export class MyFormComponent {
   formData: FormData = {
     name: '',
-    age: null,
-    email: '',
     phone: '',
     villageName: '',
     playerType: ''
@@ -47,8 +43,6 @@ export class MyFormComponent {
 
     // Append form data
     formData.append('name', this.formData.name);
-    formData.append('age', String(this.formData.age));
-    formData.append('email', this.formData.email);
     formData.append('phone', this.formData.phone);
     formData.append('villageName', this.formData.villageName);
     formData.append('playerType', this.formData.playerType);
@@ -77,8 +71,6 @@ export class MyFormComponent {
   resetForm() {
     this.formData = {
       name: '',
-      age: 0,
-      email: '',
       phone: '',
       villageName: '',
       playerType: ''
