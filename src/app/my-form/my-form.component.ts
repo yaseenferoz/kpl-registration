@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
-import { ToastrService } from 'ngx-toastr';
 
 interface FormData {
   name: string;
@@ -26,7 +25,7 @@ export class MyFormComponent {
     playerType: ''
   };
   imagePreview: string | ArrayBuffer = '';
-  constructor(private apisService: ApiService, private toastr: ToastrService) { }
+  constructor(private apisService: ApiService) { }
 
   handleFileInput(event: Event) {
     const target = event.target as HTMLInputElement;
@@ -61,14 +60,14 @@ export class MyFormComponent {
       response => {
         console.log('Form submitted successfully:', response);
         // Handle success response
-        this.toastr.success('Form submitted successfully!', 'Success');
+        
         // Reset the form
         this.resetForm();
       },
       error => {
         console.error('Error submitting form:', error);
         // Handle error response
-        this.toastr.error('Error submitting form. Please try again.', 'Error');
+       
       }
     );
   }
