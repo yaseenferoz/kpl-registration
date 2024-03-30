@@ -20,7 +20,7 @@
               <i class="user icon"></i>
               <input type="text" name="name" [(ngModel)]="formData.name" placeholder="Full Name" required>
             </div>
-            <div *ngIf="form.controls['name'].invalid && form.controls['name'].touched" class="ui red message">
+            <div *ngIf="form.controls['name']?.invalid && form.controls['name'].touched" class="ui red message">
               <div *ngIf="form.controls['name'].errors?.['required']">Please enter your Name.</div>
             </div>
           </div>
@@ -29,7 +29,7 @@
               <i class="phone icon"></i>
               <input type="tel" name="phone" [(ngModel)]="formData['phone']" placeholder="Contact Number" required pattern="[0-9]{10}">
             </div>
-            <div *ngIf="form.controls['phone'].invalid && (form.controls['phone'].dirty || form.controls['phone'].touched)" class="ui red message">
+            <div *ngIf="form.controls['phone']?.invalid && (form.controls['phone'].dirty || form.controls['phone'].touched)" class="ui red message">
               <div *ngIf="form.controls['phone'].errors?.['required']">Contact number is required.</div>
               <div *ngIf="form.controls['phone'].errors?.['pattern']">Please enter a valid 10 digits. <br>contact number </div>
           </div>
@@ -40,7 +40,7 @@
               <i class="location arrow icon"></i>
               <input type="text" name="villageName" [(ngModel)]="formData.villageName" placeholder="Village" required>
             </div>
-            <div *ngIf="form.controls['villageName'].invalid && form.controls['villageName'].touched" class="ui red message">
+            <div *ngIf="form.controls['villageName']?.invalid && form.controls['villageName'].touched" class="ui red message">
               <div *ngIf="form.controls['villageName'].errors?.['required']">Please enter your Village Name.</div>
             </div>
           </div>
@@ -51,7 +51,7 @@
               <option value="Bowler">Bowler</option>
               <option value="All-Rounder">All-Rounder</option>
             </select>
-            <div *ngIf="form.controls['playerType'].invalid && form.controls['playerType'].touched" class="ui red message">
+            <div *ngIf="form.controls['playerType']?.invalid && form.controls['playerType'].touched" class="ui red message">
               <div *ngIf="form.controls['playerType'].errors?.['required']">Please select Player Type.</div>
             </div>
           </div>
@@ -62,7 +62,7 @@
             <img [src]="imagePreview" alt="Preview" class="preview-image">
           </div>
           <div *ngIf="errorMsg" class="ui red message">{{errorMsg}}</div>
-          <button class="ui fluid large teal submit button" type="submit" [disabled]="form.invalid || !formData.photo">Submit</button>
+          <button class="ui fluid large teal submit button" type="submit" [disabled]="form?.invalid || !formData.photo">Submit</button>
           
         </div>
       </form>
