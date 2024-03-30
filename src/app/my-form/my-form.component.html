@@ -63,7 +63,9 @@
           </div>
           <div *ngIf="errorMsg" class="ui red message">{{errorMsg}}</div>
           <button class="ui fluid large teal submit button" type="submit" [disabled]="form?.invalid || !formData.photo">
-            <span *ngIf="submitting">Submitting, please wait...</span>
+            <span *ngIf="submitting">
+              <div class="ui active inline loader"></div> Submitting, please wait...
+            </span>
             <span *ngIf="!submitting">Submit</span>
           </button>
         </div>
