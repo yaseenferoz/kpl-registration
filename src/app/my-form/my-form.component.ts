@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
-
+import { Router } from '@angular/router';
 interface FormData {
   name: string;
   phone: string;
@@ -21,7 +21,7 @@ export class MyFormComponent {
     playerType: ''
   };
   imagePreview: string | ArrayBuffer = '';
-  constructor(private apisService: ApiService) { }
+  constructor(private apisService: ApiService,private router: Router) { }
 
   handleFileInput(event: Event) {
     const target = event.target as HTMLInputElement;
@@ -77,5 +77,9 @@ export class MyFormComponent {
     };
     this.imagePreview = ''; // Reset image preview
     this.errorMsg=''
+  }
+
+  reloadPage() {
+    window.location.reload();
   }
 }
