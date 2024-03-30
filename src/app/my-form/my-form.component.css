@@ -12,3 +12,7 @@
     max-width: 350px; /* Adjust the width as needed */
     max-height: 350px; /* Adjust the height as needed */
   }
+  .content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
