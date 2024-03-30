@@ -62,8 +62,10 @@
             <img [src]="imagePreview" alt="Preview" class="preview-image">
           </div>
           <div *ngIf="errorMsg" class="ui red message">{{errorMsg}}</div>
-          <button class="ui fluid large teal submit button" type="submit" [disabled]="form?.invalid || !formData.photo">Submit</button>
-          
+          <button class="ui fluid large teal submit button" type="submit" [disabled]="form?.invalid || !formData.photo">
+            <span *ngIf="submitting">Submitting, please wait...</span>
+            <span *ngIf="!submitting">Submit</span>
+          </button>
         </div>
       </form>
       <div class="ui success message" *ngIf="submitted">
